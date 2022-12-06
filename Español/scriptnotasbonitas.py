@@ -3,7 +3,7 @@ def contarlineas(resultado):
    
     nlineas=resultado.count("\r\n")+1 #
     
-    print("Total lineas = ",nlineas,"\n En código = ",nlineas+1)
+    print("Total lineas = ",nlineas,"\n En código = ",nlineas+3)
 def ponerBonitoElTexto():
     #stringingresada="Padre Garcia,\ñ Por la presente se le ordena que libere a Michael Davies de su custodia y lo devuelva a su casa  inmediatamente.\ñ El Sr. y Sra. Davies ya han sido contactados pornuestra oficina asi que un repesentante de la iglesia está en camino a su casapara discutir una compensacion a cambio de su discrecion. Usted e reunira con nuestro representante alli y lo acompañara de vuelta a Roma.\ñ             -Cardinal Gifford\ñ"
     stringingresada=cuadroTexto.get()
@@ -15,35 +15,39 @@ def ponerBonitoElTexto():
     for palabra in palabras:  
         palabras[i]=palabra+" "
         palabra=palabra+" "
-        
-        if(palabra.count("\ñ")==1 and len("".join(oracionactual))<=28):
-            print("ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ",palabra)
-            palabra=palabra[:-3] #borra //ñ
-            print("ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ",palabra)
-            palabra="".join(oracionactual)+palabra+"\r\n\r\n" #le agrega los 2 saltos 
-            listaoracionesfinal.append(palabra) ## agrega a la lista de oraciones final  la oracion
-            oracionactual=[]
-            
-            saltolinea=True
-        elif(not saltolinea):  
-            if(len("".join(oracionactual))<=26):
-                oracionactual.append(palabra)
-                print("".join(oracionactual))
+        oracionactual.append(palabra)
+        if(len("".join(oracionactual))<27):
+            if(palabra.count("\ñ")==1 ):
+                oracionactual[-1]=oracionactual[-1][:-3]
+                print("ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ",palabra)
+                palabra=palabra[:-3] #borra \\ñ AGUAC 
+                print("ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ",palabra)
+                palabra="".join(oracionactual)+"\r\n\r\n" #le agrega los 2 saltos 
+                listaoracionesfinal.append(palabra) ## agrega a la lista de oraciones final  la oracion
+                oracionactual=[]      
             else:
-                listaoracionesfinal.append("".join(oracionactual[:-1])+"\r\n")
-                oracionactual=oracionactual[-1:] #oracion actual= igual todo menos lo que ya se agregó a la lista de oraciones final
-                 #agrega la palabra actual 
-                if(palabra.count("\ñ")==1 ):
-                    palabra=palabra[:-2]  
-                oracionactual.append(palabra)
+                print(len("".join(oracionactual)),"  ".join(oracionactual))        
+        else:
+            listaoracionesfinal.append("".join(oracionactual[:-1])+"\r\n")
+            oracionactual=oracionactual[-1:] 
+            if(palabra.count("\ñ")==1 ):
+                oracionactual[-1]=oracionactual[-1][:-3]
+                print("Ñ2Ñ2Ñ2"+palabra)
+                palabra="".join(oracionactual)+"\r\n\r\n"
                 
+                listaoracionesfinal.append(palabra) #agrega a la lista final la oracion actual que seria ha sta donde vaya ñ
+                print("ELSE","".join(oracionactual)) 
+                oracionactual=[]        
+             #oracion actual= igual todo menos lo que ya se agregó a la lista de oraciones final
+            else:
+
                 print("ELSE","".join(oracionactual))
-        saltolinea=False
-        print("ciclo palabra ",oracionactual)
+        print("oracion actual: ",oracionactual)
         i+=1
         
-    contarlineas("".join(listaoracionesfinal))
+    
     resultado1=repr(("".join(listaoracionesfinal)))
+    contarlineas("".join(listaoracionesfinal))
     
    #resultado1.replace("LMAOSANT")
     resultado1= "\""+resultado1[1:-1]+"\""+","#imprime la oracion pero lista para copiar y pegar
@@ -54,22 +58,24 @@ stringingresada="Padre Garcia,\ñ Por la presente se le ordena que libere a Mich
 def copiar():
     root.clipboard_append(textorespuesta.get())
 root=Tk()
+root.title('MORTIS Ñ EDITION')
 resultado=StringVar()
 Frame=Frame(root,width=700,height=500)
 Frame.pack() 
 
 
 
-boton=Button(Frame,text="ponerbonito",command=ponerBonitoElTexto)
+boton=Button(Frame,text="ponerbonito",font=("Arial",15),command=ponerBonitoElTexto,foreground="#F1F1F1",background="#000000")
 boton.place(x=100,y=150)
-boton=Button(Frame,text="copiar",command=copiar)
-boton.place(x=200,y=150)
-textorespuesta=Entry(Frame,width=150, textvariable=resultado)
-textorespuesta.place(x=50,y=300,relheight=0.3)
-cuadroTexto=Entry(Frame,width=300)
+boton=Button(Frame,text="copiar",command=copiar,font=("Arial",15),foreground="#F1F1F1",background="#000000")
+boton.place(x=100,y=350)
+textorespuesta=Entry(Frame,width=80, textvariable=resultado)
+textorespuesta.place(x=50,y=300,)
+cuadroTexto=Entry(Frame,width=80)
 cuadroTexto.place(x=50,y=100)
-
+label1= Label(text="@ñ= \\\"",font=("Arial",17) ).place(y=150,x=340)
+label2= Label(text="\ñ = espacio entre parrafos\n PD: Tambien poner a la ultima linea",font=("Arial",17),foreground="#29BB32").place(y=200,x=330)
+stringnota= Label(text="string sin formato" ,font=("Arial",20) ).place(y=50,x=50)
+stringnotatraducida= Label(text=" formato: " ,font=("Arial",20) ).place(y=250,x=50)
 boton.pack
-# imagenbacan=PhotoImage(file="coso.png")
-# Label(Frame,image=imagenbacan).place(x=100,y=200)
-root.mainloop()
+root.mainloop()#\\\"
