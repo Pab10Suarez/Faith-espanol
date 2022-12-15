@@ -3,7 +3,7 @@ def contarlineas(resultado):
    
     nlineas=resultado.count("\r\n")+1 #
     
-    print("Total lineas = ",nlineas,"\n En código = ",nlineas+3)
+    print("Total lineas = ",nlineas,"\n En código = ",nlineas+1)
 def ponerBonitoElTexto():
     #stringingresada="Padre Garcia,\ñ Por la presente se le ordena que libere a Michael Davies de su custodia y lo devuelva a su casa  inmediatamente.\ñ El Sr. y Sra. Davies ya han sido contactados pornuestra oficina asi que un repesentante de la iglesia está en camino a su casapara discutir una compensacion a cambio de su discrecion. Usted e reunira con nuestro representante alli y lo acompañara de vuelta a Roma.\ñ             -Cardinal Gifford\ñ"
     stringingresada=cuadroTexto.get()
