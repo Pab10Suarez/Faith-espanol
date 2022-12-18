@@ -48,7 +48,7 @@ def ponerBonitoElTexto():
     
     resultado1=repr(("".join(listaoracionesfinal)))
     contarlineas("".join(listaoracionesfinal))
-    
+    print("".join(listaoracionesfinal))
    #resultado1.replace("LMAOSANT")
     resultado1= "\""+resultado1[1:-1]+"\""+","#imprime la oracion pero lista para copiar y pegar
     resultado.set(resultado1)
