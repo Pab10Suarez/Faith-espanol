@@ -1,0 +1,15 @@
+slot[2].lines = 23
+slot[4].lines= 32
+slot[7].lines=38
+slot[8].lines=24
+slot[12].lines=35
+slot[13].lines =31
+slot[14].lines = 25
+slot[15].lines=57
+slot[16].lines=35
+slot[17].lines=40
+slot[18].lines=35
+
+
+/////FINALES///// (obj_CH1_gameOver)
+ENDING1   lines=83
