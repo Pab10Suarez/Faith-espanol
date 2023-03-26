@@ -1,0 +1,23 @@
+/////NOTAS///// (gml_Object_obj_UT_CH1NOTESHANDLER_Create_0)(SOLO SIRVE PARA PAUSA Y MENU PRINCIPAL)
+INGAME= CH2_lore_tutorial_create (tutorial es el nombre de la nota 
+slot[1].lines=21 (tree deer
+slot[3].lines= 28 (B2
+slot[4].lines=35  (mazedemon
+slot[5].lines=37 (mistdimon
+slot[6].lines=? (C3
+slot[7].lines=41 (c1demon
+slot[8].lines=?   (stalker
+slot[10].lines=52 (scarecrow
+slot[11].lines=49 (church int B3)
+slot[13].lines=47 (churchintA2
+slot[15].lines=?  (confession
+slot[17].lines=220 (bodies
+
+
+
+/////FINALES///// (obj_CH1_gameOver)
+ENDING1   lines=83
+ENDING2 lines=43
+ENDING3 lines=33
+ENDING4 lines=51
+ENDING5 lines=71
