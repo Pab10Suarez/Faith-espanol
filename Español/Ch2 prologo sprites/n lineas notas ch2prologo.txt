@@ -6,3 +6,5 @@ lines=35 (churchEntrance
 lines=46 (chalice
 lines=39 (killroo01 revisar
 lines= 43   (killroom02 (revisar traduccion
+lines=54 (killroom03)
+lines=33(BASEMENT)
