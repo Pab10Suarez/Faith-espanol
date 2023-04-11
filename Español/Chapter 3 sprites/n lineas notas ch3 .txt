@@ -1,3 +1,5 @@
 /////NOTAS///// (gml_Object_obj_UT_CH2NOTESHANDLER_Create_0)(SOLO SIRVE PARA PAUSA Y MENU PRINCIPAL)
 INGAME= lore_tutorial_create (tutorial es el nombre de la nota 
 lines=27 (garcialetter2
+LINES=26 (showflyer
+lines=44 (clinic01
