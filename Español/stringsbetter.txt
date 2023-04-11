@@ -2063,7 +2063,6 @@
         "Esa cosa ahí abajo...#Eso no es mi hija.",
         "...No sé que decirles",
         "Tengo que ir a ayudar al#Padre Allred. Quedense#acá y oren por Amy.",
-        "Don't worry, Amy.#I'm coming.",
         "No te preocupes, Amy,#Voy para allá.",
         "No puedo irme sin mi#mentor, el Padre Allred.",
         "beginInput",
