@@ -4,3 +4,4 @@ lines=27 (garcialetter2
 LINES=26 (showflyer
 lines=44 (clinic01
 lines=28 (Lisa01
+lines=26 (Lisa02
