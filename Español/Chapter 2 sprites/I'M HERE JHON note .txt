@@ -1,0 +1,103 @@
+Key_Up = (keyboard_check(vk_up) || keyboard_check(ord("W")) || gamepad_axis_value(0, gp_axislv) < 0 || gamepad_button_check(0, gp_padu))
+Key_Down = (keyboard_check(vk_down) || keyboard_check(ord("S")) || gamepad_axis_value(0, gp_axislv) > 0 || gamepad_button_check(0, gp_padd))
+Key_Cross = (keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1))
+if reading
+{
+    depth = -9750
+    image_alpha = 0
+    if (scroll == 66 && trig59 == 0)
+    {
+        audio_sound_gain(tunes_CH2_basementDemon, 0, 0)
+        trig59 = 1
+    }
+    if (scroll == 67 && trig60 == 0)
+    {
+        audio_play_sound(tunes_CH2_basementDemon, 10, true)
+        trig60 = 1
+    }
+    if (scroll == 68 && trig61 == 0)
+    {
+        audio_sound_gain(tunes_CH2_trailToBodies, 0, 8000)
+        audio_sound_gain(tunes_CH2_basementDemon, 1, 8000)
+        trig61 = 1
+    }
+    if (scroll == 120 && trig100 == 0)
+    {
+        audio_play_sound(tunes_CH2_mikescreen, 8, true)
+        audio_sound_gain(tunes_CH2_mikescreen, 0, 0)
+        audio_sound_pitch(tunes_CH2_mikescreen, 0.25)
+        trig100 = 1
+    }
+    if (scroll > 120 && scroll < 204)
+    {
+        vibe = (vibeAmp * (2 * (cos((t - 1.57)) + 1)))
+        audio_sound_pitch(tunes_CH2_mikescreen, (0.25 + ((scroll - 100) / 100)))
+        audio_sound_gain(tunes_CH2_mikescreen, ((scroll - 100) / 10), 0)
+        if (scroll >= 154 && scroll < 179)
+            vibeAmp = 0.25
+        if (scroll >= 179 && scroll < 210)
+            vibeAmp = 0.5
+        gamepad_set_vibration(0, (vibe * global.UT_CONFIG_RUMBLE), (vibe * global.UT_CONFIG_RUMBLE))
+        t += 0.2
+    }
+    if (scroll == 210)
+    {
+        audio_stop_all()
+        gamepad_set_vibration(0, 0, 0)
+    }
+    if (Key_Cross && scroll == (lines - 20) && trigExit == 0)
+    {
+        exitMode = 1
+        trigExit = 1
+    }
+    if (exitMode == 1)
+    {
+        if (exitTimer == 0)
+        {
+            audio_stop_all()
+            audio_play_sound(sfx_CH2_uAreMinePriest, 10, false)
+        }
+        if (exitTimer == 30)
+        {
+            reading = 0
+            read = 1
+            with (obj_CH2_plainBlack)
+                instance_destroy()
+            instance_activate_all()
+            instance_deactivate_object(obj_CH2_pauseHANDLER)
+            io_clear()
+            obj_CH2_bodies.image_index = 1
+            obj_CH2_flamesAtBodies.image_alpha = 1
+            obj_CH2_john.canmove = 0
+            obj_CH2_cultist.image_alpha = 1
+            obj_CH2_theGirl.image_alpha = 1
+            audio_play_sound(tunes_CH2_gigantic8bitJumpScareNoise, 10, false)
+            audio_play_sound(sfx_CH2_handReveal, 2, false)
+            instance_destroy()
+        }
+        exitTimer++
+    }
+    if (Key_Down && freeScroll)
+    {
+        io_clear()
+        if (lines > 20 && scroll < (lines - 20))
+            scroll += 1
+        if (scroll >= 75)
+            freeScroll = 0
+    }
+    if (Key_Up && freeScroll && scroll < 80)
+    {
+        io_clear()
+        if (scroll > 0)
+            scroll -= 1
+        if (scroll >= 75)
+            freeScroll = 0
+    }
+    if ((!Key_Up) && (!Key_Down) && (!Key_Cross))
+        freeScroll = 1
+}
+else
+{
+    image_alpha = 1
+    depth = (-y)
+}

@@ -1,13 +1,21 @@
 /////NOTAS///// (gml_Object_obj_UT_CH1NOTESHANDLER_Create_0)
 slot[2].lines = 23 (tree
     añadir en draw: 
-        if (scroll == (lines - 20))
-    {
-        draw_set_color(c_yellow)
-        draw_text((room_width / 8), ((room_height / 8) + 855), string_hash_to_newline("ESPACIO / BOTON A: SALIR"))
-    }
+	draw_self()
+	if reading
+	{
+	    draw_set_font(fnt_CH1_zelda)
+ 	   draw_set_halign(fa_left)
+ 	   draw_set_color(c_gray)
+  	  draw_text((room_width / 8), ((room_height / 8) - (45 * scroll)), string_hash_to_newline(loreText))
+ 	   if (scroll == (lines - 20))
+ 	   {
+   	     draw_set_color(c_yellow)
+     	   draw_text((room_width / 8), ((room_height / 8) + 855), string_hash_to_newline("ESPACIO / BOTON A: SALIR"))
+    	}
+	}
 slot[7].lines=38   (shed
-slot[8].lines=24
+slot[8].lines=24 (mike  (?)
 slot[12].lines=35 (ducky
 slot[13].lines =31 (girlsroom
 slot[14].lines =25  (doll
