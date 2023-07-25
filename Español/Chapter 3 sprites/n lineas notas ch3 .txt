@@ -5,3 +5,7 @@ LINES=26 (showflyer
 lines=44 (clinic01
 lines=28 (Lisa01
 lines=26 (Lisa02
+
+---Falta modificar---
+lines 20 (INT5A
+lines 21 (Tiffany01
