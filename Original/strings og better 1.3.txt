@@ -3378,7 +3378,6 @@
         "He will be with me in trouble. He#will deliver me and honor me.",
         "I can't explain what happened#at that house.",
         "I can only have faith that I#did the right thing.",
-        "resume",
         "pitchMod",
         "redFlash",
         "truckchance",
