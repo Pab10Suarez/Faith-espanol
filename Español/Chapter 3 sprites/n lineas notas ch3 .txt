@@ -12,6 +12,9 @@ lines 50 (eye
 lines 30 (altar
 lines 42 (espejo
 lines 81 (punk
+lines 26 (GL_bigDemonHead
+lines 29 (GL_tier4
+lines 57 (jakob
 
 lines 20 (INT5A
 lines 21 (Tiffany01
