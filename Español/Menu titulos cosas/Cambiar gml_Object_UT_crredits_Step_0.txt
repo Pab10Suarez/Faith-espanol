@@ -1,0 +1,29 @@
+skipping = (keyboard_check(vk_space) || keyboard_check(vk_return) || gamepad_button_check(0, gp_face1))
+if skipping
+    room_speed = 60
+else
+    room_speed = 15
+t++
+if (t >= 2420)
+{
+    audio_stop_sound(bgm_CH3_unused1)
+    instance_create(0, 0, obj_blackScrn)
+    if (room == rm_UT_credits2)
+    {
+        var newTotals_CBG = (((((((global.UNLOCK_CBG1 + global.UNLOCK_CBG2) + global.UNLOCK_CBG3) + global.UNLOCK_CBG4) + global.UNLOCK_CBG5) + global.UNLOCK_CBG6) + global.UNLOCK_CBG7) + global.UNLOCK_CBG8)
+        var newTotals_shaders = (((global.UNLOCK_SHADER1 + global.UNLOCK_SHADER2) + global.UNLOCK_SHADER3) + global.UNLOCK_SHADER4)
+        var newTotals_modes = ((((global.UNLOCK_CH1MODES + global.UNLOCK_CH1TURBO) + global.UNLOCK_CH2P) + global.UNLOCK_CH2TURBO) + global.UNLOCK_CH3TURBO)
+        var newTotals_options = global.UNLOCK_DEMONSOPTIONAL
+        if (newTotals_CBG > global.UNLOCK_CBG_TOTAL || newTotals_shaders > global.UNLOCK_SHADERS_TOTAL || newTotals_modes > global.UNLOCK_MODES_TOTAL || newTotals_options > global.UNLOCK_OPTIONS_TOTAL)
+            room_goto(nextRoom)
+        else
+        {
+            audio_stop_all()
+            io_clear()
+            draw_texture_flush()
+            game_restart()
+        }
+    }
+    else
+        room_goto(nextRoom)
+}
