@@ -11,10 +11,12 @@ slot[10].lines=52 (scarecrow
 slot[11].lines=49 (church int B3)
 slot[13].lines=29 (churchintA2
 slot[15].lines=28  (confession
-slot[17].lines=220 (bodies --> I'M HERE JHON nota(tomar en cuenta los numeros de los if donde va reproduciendo cambiando audio,etc.)
+slot[17].lines=230 (bodies --> I'M HERE JHON nota(tomar en cuenta los numeros de los if donde va reproduciendo cambiando audio,etc.)
 slot[18].lines=47(tunn_E
 slot[19].lines=43(tunn_NW
 slot[20].lines=49(tunn_secret2
 slot[21].lines=23(tunn_secret
 slot[24].lines=27 (garcia 
+
+
 

@@ -28,19 +28,19 @@ if reading
         audio_sound_pitch(tunes_CH2_mikescreen, 0.25)
         trig100 = 1
     }
-    if (scroll > 120 && scroll < 204)
+    if (scroll > 120 && scroll < 209)
     {
         vibe = (vibeAmp * (2 * (cos((t - 1.57)) + 1)))
         audio_sound_pitch(tunes_CH2_mikescreen, (0.25 + ((scroll - 100) / 100)))
         audio_sound_gain(tunes_CH2_mikescreen, ((scroll - 100) / 10), 0)
         if (scroll >= 154 && scroll < 179)
             vibeAmp = 0.25
-        if (scroll >= 179 && scroll < 210)
+        if (scroll >= 179 && scroll < 209)
             vibeAmp = 0.5
         gamepad_set_vibration(0, (vibe * global.UT_CONFIG_RUMBLE), (vibe * global.UT_CONFIG_RUMBLE))
         t += 0.2
     }
-    if (scroll == 210)
+    if (scroll == 209)
     {
         audio_stop_all()
         gamepad_set_vibration(0, 0, 0)
