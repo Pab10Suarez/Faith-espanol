@@ -1,6 +1,6 @@
 /////NOTAS///// (gml_Object_obj_UT_CH2NOTESHANDLER_Create_0)(SOLO SIRVE PARA PAUSA Y MENU PRINCIPAL)
 INGAME= CH2P_lore_tutorial_create (tutorial es el nombre de la nota 
-lines=41 (root
+lines=41 (rott
 lines=41 (tomb
 lines=35 (churchEntrance
 lines=46 (chalice

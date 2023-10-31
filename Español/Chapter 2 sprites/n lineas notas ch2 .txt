@@ -3,7 +3,7 @@ INGAME= CH2_lore_tutorial_create (tutorial es el nombre de la nota
 slot[1].lines=21 (tree deer
 slot[3].lines= 28 (B2
 slot[4].lines=35  (mazedemon
-slot[5].lines=37 (mistdimon
+slot[5].lines=37 (mistdemon
 slot[6].lines=42 (C3
 slot[7].lines=41 (c1demon
 slot[8].lines=41   (stalker
@@ -12,6 +12,7 @@ slot[11].lines=49 (church int B3)
 slot[13].lines=29 (churchintA2
 slot[15].lines=28  (confession
 slot[17].lines=230 (bodies --> I'M HERE JHON nota(tomar en cuenta los numeros de los if donde va reproduciendo cambiando audio,etc.)
+cambiar en ch2_bodies_draw: 
     		if (scroll < 205)
         		draw_set_color(c_gray)
    	 	 else
