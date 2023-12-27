@@ -11,6 +11,7 @@ slot[10].lines=52 (scarecrow
 slot[11].lines=49 (church int B3)
 slot[13].lines=29 (churchintA2
 slot[15].lines=28  (confession
+slot[18].lines=32 (churchBasement01
 slot[17].lines=230 (bodies --> I'M HERE JHON nota(tomar en cuenta los numeros de los if donde va reproduciendo cambiando audio,etc.)
 cambiar en ch2_bodies_draw: 
     		if (scroll < 205)
