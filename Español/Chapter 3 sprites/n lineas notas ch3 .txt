@@ -13,13 +13,13 @@ lines 50 (eye
 lines 30 (altar
 lines 42 (espejo
 lines 81 (punk
-lines 26 (GL_bigDemonHead
+lines 52 (GL_tier2
 lines 29 (GL_tier4
+lines 26 (GL_bigDemonHead
 lines 57 (jakob
 lines 21 (Tiffany01
 lines 26 (DC1
 lines 38 (GL2
-lines 52 (GL_tier2
 lines 32 (TH1
 lines 43 (CH3E3_forbiddenRoom1
 lines 56 (CH3E3_MrsMartin

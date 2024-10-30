@@ -23,7 +23,7 @@ slot[18].lines=47(tunn_E
 slot[19].lines=43(tunn_NW
 slot[20].lines=49(tunn_secret2
 slot[21].lines=23(tunn_secret
-slot[24].lines=27 (garcia 
+slot[24].lines=27 (garcia [ending 1]
 
 
 
